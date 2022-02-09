@@ -1,4 +1,4 @@
-class aap{
+class App{
     constructor(){
         this.naveEspacial = null
     }
@@ -14,14 +14,14 @@ class aap{
 
     cadastrarNave (){
             let nomeNave = prompt ("Digite o nome da nave ?")
-            let quantidadeTripulante = ("Qual a quantidade de tripulantes?")
+            let quantidadeTripulante = prompt("Qual a quantidade de tripulantes?")
             let tipoNave = this.askForNaveEspacialKind()
-            if(askForNaveEspacialKind == "1"){
+            if(tipoNave == "1"){
                 let weaponsQuantity = prompt(" Quantas armas a nave possui?")
-                this.naveEspacial= new BattleNave(nomeNave,quantidadeTripulante,weaponsQuantity)
+                this.naveEspacial= new naveAtaque(nomeNave,quantidadeTripulante,weaponsQuantity)
             }else {
                 let sitsQuantity = prompt(" Quantas lugares a nave possui?")
-                this.naveEspacial= new trasporteNave(nomeNave,quantidadeTripulante,sitsQuantity)
+                this.naveEspacial= new naveTrasporte(nomeNave,quantidadeTripulante,sitsQuantity)
 
             }
     }
@@ -59,12 +59,12 @@ class aap{
 
     accelarateNaveEspacial(){
         let Acelerar =Number(prompt("Quanto você quer acelerar?")) 
-        this.naveEspacial.speedUp()
+        this.naveEspacial.speedUp(Acelerar)
     }
 
     printAndExit (){
-        let finalMessage = "Nome: " + this.naveEspacial.name + "\n" +
-                            "Quantidade : " + this.naveEspacial.crewQuantity + "\n" +
+        let finalMessage = "Nome da nave: " + this.naveEspacial.name + "\n" +
+                            "Quantidade de tripulantes: " + this.naveEspacial.crewQuantity + "\n" +
                             " Velocidade atual: " + this.naveEspacial.currentvelocity + "\n"
            alert(finalMessage)                 
         
