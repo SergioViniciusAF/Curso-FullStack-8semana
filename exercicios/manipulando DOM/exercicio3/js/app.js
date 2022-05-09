@@ -1,16 +1,16 @@
 class app{
     addImoveis(){
-        alert("teste")
+       
         event.preventDefault()
 
         let tipoDeImovel = document.querySelector("select[name='tipoDeImovel']").value
         let area = document.querySelector("input[name='area']").value
-        let vendido = document.querySelector("input[name='vendido']").Checked
+        let vendido = document.querySelector("input[name='vendido']").checked
         let imoveis = new Imoveis(tipoDeImovel, area, vendido)
         this.addOnImoveisLista(imoveis)
         this.cleanForm()
     }
-     addOnImoveisLista(imoveis){
+    addOnImoveisLista(imoveis){
         let listElement = document.createElement("li")
         let imovelInfo = " Tipo: " + imoveis.tipoDeImovel + " (Área: " + imoveis.area + "m²)"
 
@@ -34,7 +34,7 @@ class app{
     }
     createRemoveButton(){
         let removeBotao = document.createElement("button")
-        removeBotao .setAttribute("onclick", "app.remove()")
+        removeBotao .setAttribute("onclick", "App.remove()")
         removeBotao .style.backgroundColor ="green"
         removeBotao .innerText = "Remover"
          return removeBotao 

@@ -12,6 +12,7 @@ class App{
      addOnPropertiesList(property){
             let listElement = document.createElement("li")
             let propertyInfo = " Tipo: " + property.kind + " (Área: " + property.area + "m²)"
+        
             if(property.rented) {
               let rentedMark = this.createRentedMark()
               listElement.appendChild(rentedMark)
